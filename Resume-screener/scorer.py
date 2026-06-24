@@ -1,0 +1,14 @@
+def calculate_score(candidate_skills, job_skills):
+
+    matched = []
+    missing = []
+
+    for skill in job_skills:
+        if skill in candidate_skills:
+            matched.append(skill)
+        else:
+            missing.append(skill)
+
+    score = (len(matched) / len(job_skills)) * 100
+
+    return score, matched, missing
